@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  
+  {% if orderhistory %}
+    <h3 class="text-center">Your Order History:</h3>
+    <h3 class="text-center">Total Cost : {{total_cost}} Tk</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">price</th>
+          <th scope="col">Food Items</th>
+          <th scope="col">Ratting</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orderhistory %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ order.date }}</td>
+            <td>{{ order.total_cost }}</td>
+            <td>{{order.food_items}}</td>
+            <td>
+              <a class="btn btn-warning" href="{% url 'add_review' order.food_items.id %}">Ratting</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No orders yet.</p>
+  {% endif %}
+{% endblock %}

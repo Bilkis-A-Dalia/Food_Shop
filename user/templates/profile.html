@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  
+  {% if orders %}
+    <h3 class="text-center">Your Cart:</h3>
+    <h3 class="text-center">Total Cost: {{total_cost}}</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">price</th>
+          <th scope="col">Food Items</th>
+          <th scope="col">Order</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ order.date }}</td>
+            <td>{{ order.total_cost }}</td>
+            <td>{{order.food_items}}</td>
+            <td>
+              <a class="btn btn-warning" href="{% url 'order' order.id%}">Order</a>
+            </td>
+            <td>
+              <a class="btn btn-danger" href="{%url 'remove_from_cart' order.id%}">Remove Item</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <h3 class="text-center">No Items in the cart right now</h3>
+  {% endif %}
+{% endblock %}
