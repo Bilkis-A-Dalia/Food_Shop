@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-4!sa@2^iy^p-3-0vb!03vq$8fu-#k^fhcusr0ssee1mv&b=*-3
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://flavorfusion-delights.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition
