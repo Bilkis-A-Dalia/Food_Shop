@@ -1,9 +1,72 @@
 {% extends 'base.html' %} {%load static%} {% block content %}
 
-<div class="d-flex flex-wrap px-5 pt-3 align-items-center">
-  <div class="col-6">
-    <h3>Welcome to</h3> 
-    <br>
+
+{% comment %} Carosoul {% endcomment %}
+<div class="container carosoul-container" data-aos="fade-up">
+  <div class="swiffy-slider slider-nav-round slider-nav-animation slider-nav-animation-fadein slider-item-first-visible">
+    <ul class="slider-container">
+        <li class="slide-visible">
+            <div class="card rounded-0 h-75">
+                <div class="row g-0 h-100">
+                    <div class="col-md-6 col-xl-5 d-flex align-items-center p-2 p-md-3 p-xl-5">
+                        <div class="card-body p-1 p-md-3 p-xl-5">
+                            <p class="lead"></p>
+                            <h2 class="card-title" style="color:#DF1E1E;">Culinary Symphony:</h2>
+                            <p class="card-text mt-3">"A great restaurant is like a symphony of flavors,</p>
+                            <p> where each dish plays a unique note that, when combined, creates a masterpiece for the senses."</p>
+                            <p class="card-text"><small class="text-muted">Remember to check out </small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-7">
+                        <img src="{% static 'shop1.jpg'%}" class="card-img d-none d-md-block" loading="lazy" style="height: 100%; object-fit: cover;" alt="...">
+                    
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card rounded-0 h-75">
+                <div class="row g-0 h-100">
+                    <div class="col-md-6 col-xl-7">
+                        <img src="{% static 'shop2.jpg'%}" class="card-img d-none d-md-block" loading="lazy" style="height: 100%; object-fit: cover" alt="...">
+                        
+                    </div>
+                    <div class="col-md-6 col-xl-5 d-flex align-items-center p-2 p-md-3 p-xl-5">
+                        <div class="card-body p-1 p-md-3 p-xl-5">
+                            <p class="lead">Dreaming about food</p>
+                            <h2 class="card-title" style="color:#DF1E1E;">The Heartbeat of Hospitality</h2>
+                            <p class="card-text mt-3">"In a world where every bite tells a story, a remarkable restaurant is the pulsating heartbeat of hospitality, leaving patrons with unforgettable tales on their taste buds."</p>
+                            <p class="card-text"><small class="text-muted">Handcrafted like good</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card rounded-0 h-75 text-warning">
+                <img src="{% static 'shop3.jpg'%}" class="card-img h-100" style="max-height: 100%; max-width: 100%; object-fit: cover" alt="...">
+                <div class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column">
+                    <h2 class="card-title h1 d-block d-md-inline-block">Epicurean Elegance</h2>
+                    <p class="card-text lead col-md-8 col-lg-6">"A truly exceptional restaurant is a journey of epicurean elegance, where passion meets palate, and every meal is a celebration of artistry on a plate.". </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators">
+        <button class="active" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+    </div>
+</div>
+</div>
+
+
+<div class="d-flex flex-wrap px-5 pt-3 align-items-center" data-aos="fade-up">
+  <div class="col-12">
     <h1 class='text-primary'>"FlavorFusion Delights"</h1>
     <p>
       Step into our food shop and immerse yourself in a culinary haven where
@@ -19,14 +82,38 @@
       memories, one delectable dish at a time.
     </p>
   </div>
-  <div class="col-6">
-    <img class='img-fluid' src="{% static 'header.jpeg'%}" alt="" />
-  </div>
+</div>
+<hr  data-aos="fade-up">
+{% comment %} item slider {% endcomment %}
+<div class='container'>
+  <h1 class='text-center'>Items</h1>
+  <div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
+    <div class="slider-container">
+        <div><img src="{%static 'Iteams/item1.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item2.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item3.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item4.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item5.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item6.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item7.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item8.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item9.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item10.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item11.jpeg'%}" alt="..."></div>
+        <div><img src="{%static 'Iteams/item12.jpeg'%}" alt="..."></div>
+        
+    </div>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+</div>
 </div>
 
-<div class="d-flex flex-wrap px-3 p-4">
-  <div class="col-2 bg-white p-3">
-    <h5>All_Categories</h5>
+
+<div class="d-flex flex-wrap px-3 p-4" data-aos="fade-up">
+  <div class="col-2 bg-dark text-white p-3">
+    <h5>Menu Card</h5>
     {%for cat in category%}
     <div class="form-check">
       <input
@@ -38,7 +125,7 @@
       <label class="form-check-label" for="{{cat.id}}">
         <a
           href="{%url 'category_wise_food'  cat.slug%}"
-          class="text-decoration-none text-dark"
+          class="text-decoration-none text-white" data-aos="fade-up"
         >
           {{cat.name}}
         </a>
@@ -51,8 +138,8 @@
     <div class="d-flex flex-wrap pt-5">
       {% for food in data %}
       <div class="col-sm-3">
-        <div class="card mx-2">
-          <div class="card-body">
+        <div class="card mx-2 " data-aos="fade-up">
+          <div class="card-body" data-aos="fade-up">
             <img src="{{ food.image.url }}" class="card-img-top" alt="" />
             <h5 class="card-title">
               <a href="" class="text-decoration-None text-dark"
@@ -81,4 +168,368 @@
     </div>
   </div>
 </div>
+{% comment %} Sepials {% endcomment %}
+<div class='container'>
+  <h1 class='text-center'><a href="{%url 'discounted_products'%}">Special Offers</a></h1>
+  <div class="swiffy-slider slider-item-show3 slider-nav-dark slider-nav-visible slider-nav-outside slider-item-snapstart my-3 slider-nav-sm my-xl-5 slider-indicators-square slider-indicators-outside slider-indicators-dark slider-nav-animation-slideup slider-nav-animation slider-item-first-visible">
+    <div class="slider-container">
+        <div class="slide-visible">
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 11:12</h3>
+                <strong>Never seen before:</strong> Taste The Sweet <small class="text-muted text-uppercase">Amazing</small>
+            </div>
+        </div>
+        <div class="slide-visible">
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 10:02</h3>
+                <span class="badge bg-warning text-dark"><strong>BREAKING</strong></span> Great Bites <small class="text-muted text-uppercase">In every of You</small>
+            </div>
+        </div>
+        <div class="slide-visible">
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 09:48</h3>
+                Grab Your Dishes <small class="text-muted text-uppercase">Corp BS</small>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 09:32</h3>
+                <span class="badge bg-success"><strong>Style</strong></span> Get fantastic lunch recipes for family working at home. <small class="text-muted text-uppercase">Awesome</small>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 09:28</h3>
+                <strong>Just released:</strong> an even more special thing <small class="text-muted text-uppercase">Frech Fry</small>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3 class="mb-0 h6" style="color:#DF1E1E;">Today @ 08:08</h3>
+                Sweet like awsome <small class="text-muted text-uppercase">Simple</small>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators" style="justify-content:right;margin-left: 3rem;">
+        <button class="active" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+    </div>
+
+</div>
+</div>
+
+<hr class='container' data-aos="fade-up">
+<div class='container d-flex' data-aos="fade-up">
+  <div class='m-3 card'>
+    <div class="p-3">
+    <h1>Master Chefs</h1>
+    <p>"MasterChef is a competitive cooking reality show where home and </p>
+    <p>compete for the title of MasterChef."</p>
+    <p><span style="color:#ff0000;">Awsome</span></p>
+    </div>
+  </div>
+    <div class='m-3 card'>
+      <div class='p-3'>
+        <h2>Quality Food</h2>
+    <p>Good in every bite</p>
+    <p>Taste the dishes</p>
+    <p><span style="color:#ff0000;">diam</span></p>
+      </div>
+    </div>
+    <div class='m-3 card'>
+      <div class='p-3'>
+        <h2>Online Order</h2>
+    <p>Click The buy</p>
+    <p>As soon as your home</p>
+    <p><span style="color:#ff0000;">diam</span></p>
+      </div>
+    </div>
+    <div class='m-3 card'>
+      <div class='p-3'>
+        <h2>24/7 Service</h2>
+    <p>Whenever your call</p>
+    <p>At your service</p>
+    <p><span style="color:#ff0000;">diam</span></p>
+      </div>
+    </div>
+</div>
+
+
+<div class="about-us-container" data-aos="fade-up">
+  <div class="container about-us">
+    <h1 class="text-center">About Us</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Welcome to Restoran. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+        <p>15 Years of EXPERIENCE</p>
+        <button class="btn btn-primary">READ MORE</button>
+      </div>
+      <div class="col-md-6">
+        <img src="{%static 'header.jpeg'%}" alt="Restoran" class="img-fluid h-75">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center" data-aos="fade-up">50 Popular Master Chefs</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="team">
+  <div class="team">
+    <div class="container">
+      <h1 class="text-center">Our Team</h1>
+      <div class="row">
+        <div class='d-flex'>
+          <div class="col-md-4 col-sm-6 m-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'Team/m1.jpeg'%}" class="card-img-top img-fluid" alt="Team Member 1">
+              <div class="card-body">
+                <h5 class="card-title">Mr.Rahim</h5>
+                <p class="card-text">Chef-1</p>
+              </div>
+            </div>
+          </div>
+  
+        {% comment %} member 2 {% endcomment %}
+        <div class="col-md-4 col-sm-6 m-3">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'Team/m2.jpeg'%}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Mr. Karim</h5>
+              <p class="card-text">Chef-2</p>
+            </div>
+          </div>
+        </div>
+             {% comment %} member 2 {% endcomment %}
+             <div class="col-md-4 col-sm-6 m-3">
+              <div class="card" style="width: 18rem;">
+                <img src="{% static 'Team/m3.jpeg'%}" class="card-img-top" alt="Team Member 1">
+                <div class="card-body">
+                  <h5 class="card-title">Mr. Abbas</h5>
+                  <p class="card-text">Chef-3</p>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+
+        <div class="d-flex">
+          <div class="col-md-4 col-sm-6 m-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'Team/m4.jpeg'%}" class="card-img-top" alt="Team Member 1">
+              <div class="card-body">
+                <h5 class="card-title">Chef Starburst</h5>
+                <p class="card-text">Chef-4</p>
+              </div>
+            </div>
+          </div>
+  
+        {% comment %} member 2 {% endcomment %}
+        <div class="col-md-4 col-sm-6 m-3">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'Team/m4.jpeg'%}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Chef Victor-Andre</h5>
+              <p class="card-text">Chef-5</p>
+            </div>
+          </div>
+        </div>
+             {% comment %} member 2 {% endcomment %}
+             <div class="col-md-4 col-sm-6 m-3">
+              <div class="card" style="width: 18rem;">
+                <img src="{% static 'Team/m6.jpeg'%}" class="card-img-top" alt="Team Member 1">
+                <div class="card-body">
+                  <h5 class="card-title">Chef Chili Pepper</h5>
+                  <p class="card-text">Chef-6</p>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class='container' data-aos="fade-up">
+
+<div class="customer-lines container" data-aos="fade-up">
+  <h1 class="text-center">Customer Notes</h1>
+  <div class="swiffy-slider slider-item-show2 slider-nav-sm slider-nav-page slider-item-snapstart slider-item-nogap slider-nav-round slider-nav-dark slider-indicators-sm slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-slideup slider-item-last-visible">
+    <div class="slider-container">
+        <div class="p-3 p-xl-5 text-light" style="background-color: #354f52;">
+            <h3 class="text-uppercase h5">Benefits from using our products</h3>
+            <p>
+              "Customer praised the exquisite presentation of the dishes and commended the chef's attention to detail."
+            </p>
+            <button class="btn btn-outline-light">Read more</button>
+        </div>
+        <div class="p-3 p-xl-5 text-light" style="background-color: #2f3e46;">
+            <h3 class="text-uppercase h5">Some Fantastic one</h3>
+            <p>
+              "Positive feedback on the prompt and friendly service; highlighted the server's helpful recommendations."
+            </p>
+            <button class="btn btn-outline-light">Read More</button>
+        </div>
+        <div class="p-3 p-xl-5 text-light" style="background-color: #52796f;">
+            <h3 class="text-uppercase h5">Understand Us</h3>
+            <p>
+              "Noted the cozy ambiance and appreciated the efforts of the staff in creating a welcoming atmosphere."
+            </p>
+            <button class="btn btn-outline-light">Read More</button>
+        </div>
+        <div class="p-3 p-xl-5 text-light" style="background-color: #354f52;">
+            <h3 class="text-uppercase h5">Positive One</h3>
+            <p>
+              "Customer expressed satisfaction with the diverse menu options, stating it catered well to various dietary preferences."
+            </p>
+            <button class="btn btn-outline-light">Read more</button>
+        </div>
+        <div class="p-3 p-xl-5 text-light slide-visible" style="background-color: #2f3e46;">
+            <h3 class="text-uppercase h5">Join our party</h3>
+            <p>
+              "Complimented the chef for accommodating a special dietary request without compromising on flavor."
+            </p>
+            <button class="btn btn-outline-light">Sign up</button>
+        </div>
+        <div class="p-3 p-xl-5 text-light slide-visible" style="background-color: #52796f;">
+            <h3 class="text-uppercase h5">Casual Positiveness</h3>
+            <p>
+              "Mentioned the impressive speed of service during a busy evening, emphasizing the team's efficiency in handling a full house."
+            </p>
+            <button class="btn btn-outline-light">Sign up</button>
+        </div>
+    </div>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators d-md-none">
+        <button class="" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class="active"></button>
+    </div>
+</div>
+
+</div>
+
+{% comment %} Reviews {% endcomment %}
+<div class="container">
+  <div class="container client-reviews" data-aos="fade-up">
+    <div class="mt-3 text-center">
+        <h2>Client Reviews</h2>
+    </div>
+    <div class="w-75 swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein m-auto">
+        <ul class="slider-container py-4">
+            {% for review in reviews %}
+                <li class="">
+                    <div class="card shadow h-100 p-3">
+                        <div class="review-card text-dark">
+                            <img src="{% static 'review.jpeg'%}" alt="">
+                            <h4>{{ review.user.username }}</h4>
+                            <p>Food: {{ review.food.food_name }}</p>
+                            <p>Message: {{ review.review }}</p>
+                            <h6>Rating: {{ review.rating }}</h6>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <button type="button" class="slider-nav" aria-label="Go left"></button>
+        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+        <div class="slider-indicators">
+            {% for review in reviews %}
+                <button class="{% if forloop.first %}active{% endif %}" aria-label="Go to slide"></button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+<hr class='container' data-aos="fade-up">
+<div class=" container ticket" data-aos="fade-up">
+  <div class="reservation">
+    <div class="container">
+      <h1 class="text-center">Reservation</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="date">Date & Time</label>
+          <input type="datetime-local" class="form-control" id="date">
+        </div>
+        <div class="form-group">
+          <label for="request">Special Request</label>
+          <textarea class="form-control" id="request" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="people">No Of People</label>
+          <select class="form-control" id="people">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">BOOK NOW</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+          duration: 1000,
+          always: true,
+      });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+
+      counters.forEach(counter => {
+          const updateCount = () => {
+              const target = +counter.getAttribute('data-count');
+              const count = +counter.innerText;
+
+              const inc = target / speed;
+
+              if (count < target) {
+                  counter.innerText = count + inc;
+                  setTimeout(updateCount, 1);
+              } else {
+                  counter.innerText = target;
+              }
+          };
+
+          updateCount();
+      });
+  });
+</script>
 {%endblock%}
