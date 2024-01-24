@@ -31,7 +31,7 @@ class AddReviewView(View):
             review.food = food
             review.save()
             messages.success(request, 'Review added successfully!')
-            return redirect('orderhistory')
+            return redirect('home')
         else:
             messages.error(request, 'Invalid review. Please check your input.')
 

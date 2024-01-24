@@ -1,11 +1,21 @@
-<!-- add_review.html -->
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-  <h2>Add Review for {{ food.name }}</h2>
-  <form method="post" action="{% url 'add_review' food.id %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit Review</button>
-  </form>
+<div class='container d-flex' style='margin-top:100px;'>
+
+    <div class="form-card col-md-12" style=" padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 50%; margin: auto;">
+        <form method="post" style="color: black; font-weight: bold;">
+            <h1 style="text-align: center; margin-bottom: 30px; font-weight: bold; color: black;"> Review Page</h1>
+        
+            {% csrf_token %}
+        
+            {{ form|crispy }}
+        
+            <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">Submit</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

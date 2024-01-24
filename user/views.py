@@ -80,7 +80,7 @@ def user_login(request):
             if user is not None:
                 messages.success(request, 'Logged in successfully')
                 login(request, user)
-                return redirect('profile')
+                return redirect('home')
         else:
             messages.warning(request, 'Login information incorrect')
             return redirect('user_login')
