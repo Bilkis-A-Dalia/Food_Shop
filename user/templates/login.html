@@ -15,6 +15,22 @@
         
             {% csrf_token %}
         
+            {% if form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    Please correct the following errors:
+                    <ul>
+                        {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ field }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        
             {{ form|crispy }}
         
             <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">Login</button>

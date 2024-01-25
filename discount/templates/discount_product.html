@@ -4,13 +4,12 @@
       <div class="d-flex flex-wrap pt-5">
         {% for food in discounted_items %}
         <div class="col-sm-3">
-          <div class="card mx-2">
+          <div class="card mx-2 h-100">
             <div class="card-body">
               <img src="{{ food.food_type.image.url }}" class="card-img-top" alt="" />
               <h5 class="card-title">
-                <a href="" class="text-decoration-None text-dark"
-                  >{{ food.food_type.food_name }}</a
-                >
+                <h4 href="" class="text-decoration-None text-dark"
+                  >{{ food.food_type.food_name }}</h4>
               </h5>
               <p class="card-text">Price : {{ food.discount }} % off</p>
               <p>

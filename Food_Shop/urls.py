@@ -26,6 +26,8 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('discount/', include('discount.urls')),
     path('',views.Home, name='home'),
+    path('service/',views.Service, name='service'),
+    path('contact_us/',views.ContactUs, name='contact-us'),
     path('category/<slug:category_slug>', views.Home,name='category_wise_food'),
 ]
 

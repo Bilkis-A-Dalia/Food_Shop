@@ -1,0 +1,27 @@
+{% extends "base.html" %} {%load static%} {% block content %}
+
+<main>
+    <div style="margin-top: 100px;" class='row col-md-12 d-flex justify-content-center align-items-center'>
+  <div class="card col-md-3 m-5 h-100" style="width: 18rem;">
+  <img src="{% static 'service/24.jpg'%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">24/7 open" implies that a business or service is available around the clock, seven days a week. This commitment to continuous availability ensures that customers can access the products or assistance they need at any time, emphasizing convenience and accessibility.
+        <br>Uninterrupted service, day and night, offering unparalleled accessibility for customers whenever they need assistance or support.
+    </p>
+  </div>
+</div>
+<div class="card col-md-3 m-5 h-100" style="width: 18rem;">
+  <img src="{% static 'service/images.jpg'%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Dining options available at FlavorFusion Delights provide a delightful experience with a diverse menu catering to various tastes and preferences. Enjoy a welcoming ambiance and exceptional service as you savor our culinary creations in a comfortable dining setting.</p>
+  </div>
+</div>
+<div class="card col-md-3 m-5 h-100" style="width: 18rem;">
+  <img src="{% static 'service/delivary.jpg'%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Home delivery is a customer-centric service that offers the convenience of receiving products or services directly at one's residence, eliminating the need to visit physical stores. This business model has witnessed a surge in demand, driven by the modern consumer's preference for efficiency, comfort, and time-saving solutions in their daily lives.</p>
+  </div>
+</div>
+</div>
+</main>
+{%endblock%}

@@ -10,3 +10,8 @@ def Home(request, category_slug=None):
         data = FoodMenu.objects.filter(category=category)
     category = Category.objects.all()
     return render(request, 'home.html', {'data': data, 'category': category,'reviews': reviews})
+
+def Service(request):
+    return render(request, 'service.html')
+def ContactUs(request):
+    return render(request, 'about_us.html')

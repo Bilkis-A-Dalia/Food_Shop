@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<main>
   
   {% if orderhistory %}
     <h3 class="text-center">Your Order History:</h3>
@@ -33,4 +33,6 @@
   {% else %}
     <p>No orders yet.</p>
   {% endif %}
+</main>
+  
 {% endblock %}

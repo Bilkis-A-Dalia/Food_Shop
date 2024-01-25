@@ -78,12 +78,11 @@ def user_login(request):
             user_pass = form.cleaned_data['password']
             user = authenticate(username=user_name, password=user_pass)
             if user is not None:
-                messages.success(request, 'Logged in successfully')
                 login(request, user)
+                messages.success(request, 'Logged in successfully')
                 return redirect('home')
-        else:
-            messages.warning(request, 'Login information incorrect')
-            return redirect('user_login')
+        messages.warning(request, 'Login information incorrect')
+        return render(request, 'login.html', {'form': form, 'type': 'Login'})
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form, 'type': 'Login'})
