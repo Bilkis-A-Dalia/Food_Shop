@@ -1,173 +1,179 @@
 /* Footer styles */
 .footer {
-    background-color: #343a40;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 20px 0;
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 20px 0;
 }
 .owner {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 10px;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Roboto Slab', serif;
-    /* font-family: 'Signika', sans-serif; */
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-
+  font-family: "Roboto Slab", serif;
+  /* font-family: 'Signika', sans-serif; */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-main{
+main {
   flex: 1;
   min-height: 450px;
 }
 
-footer{
+footer {
   margin-top: auto;
 }
 /* Navbar styles */
-.navbar {
-    background-color: #343a40;
-    color: white;
+.navbar-nav li.nav-item a.nav-link {
+  text-decoration: none; /* Remove default underline */
+  color: #000; /* Set default text color */
 }
 
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
+.navbar-nav li.nav-item a.nav-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #007bff; /* Change to the desired hover color */
 }
 
-.navbar-nav .nav-link {
-    font-size: 1.2rem;
-    margin-right: 10px;
+/* Optional: Add transition for smoother effect */
+.navbar-nav li.nav-item a.nav-link {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
- }
- 
- .fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
- }
- .carosoul-container{
-    margin-top: 50px;
- }
- .about-us {
-    padding: 50px 0;
-  }
-  
-  .about-us h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-  }
-  
-  .about-us p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  
-  .about-us .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .about-us .btn-primary {
-    font-size: 1.2rem;
-    padding: 10px 30px;
-  }
-  /* .reservation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.carosoul-container {
+  margin-top: 50px;
+}
+.about-us {
+  padding: 50px 0;
+}
+
+.about-us h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.about-us .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-us .btn-primary {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+/* .reservation {
     padding: 50px 0;
     background-color: #565758;
   } */
-  
-  .reservation h1 {
-    font-size: 3rem;
-    margin-bottom: 50px;
-  }
-  
-  .reservation .form-control {
-    margin-bottom: 20px;
-  }
-  
-  .reservation .btn-primary {
-    font-size: 1.2rem;
-    padding: 10px 30px;
-  }
-  .team {
-    padding: 50px 0;
-  }
-  
-  .team h1 {
-    font-size: 3rem;
-    margin-bottom: 50px;
-  }
-  
-  .team .card {
-    margin-bottom: 30px;
-  }
-  
-  .team .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .team .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .team .card-text {
-    font-size: 1.1rem;
-    color: #6c757d;
-  }
 
-  .ticket{
-    background-color: #343a40;
-    color: #f8f9fa;
-    margin-bottom: 20px;
-  }  
+.reservation h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.reservation .form-control {
+  margin-bottom: 20px;
+}
+
+.reservation .btn-primary {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+.team {
+  padding: 50px 0;
+}
+
+.team h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.team .card {
+  margin-bottom: 30px;
+}
+
+.team .card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team .card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.team .card-text {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.ticket {
+  background-color: #343a40;
+  color: #f8f9fa;
+  margin-bottom: 20px;
+}
 #animatedText.slider-nav-animation .slider-container .custom-animated-text {
-            opacity: 0.25;
-            transform: scale(.25);
-            transition: opacity 1.5s ease-in-out, transform .95s ease-in-out;
-            transition-delay: .5s;
-            text-align: center;
-        }
-        /*The end of animation*/
-        
-        #animatedText.slider-nav-animation .slider-container .slide-visible .custom-animated-text {
-            opacity: 1;
-            transform: none;
-        }
+  opacity: 0.25;
+  transform: scale(0.25);
+  transition: opacity 1.5s ease-in-out, transform 0.95s ease-in-out;
+  transition-delay: 0.5s;
+  text-align: center;
+}
+/*The end of animation*/
+
+#animatedText.slider-nav-animation
+  .slider-container
+  .slide-visible
+  .custom-animated-text {
+  opacity: 1;
+  transform: none;
+}
 
 /* Media Query for Small Screens */
 @media (max-width: 768px) {
-    .navbar-nav .nav-link {
-        margin-right: 0;
-    }
+  .navbar-nav .nav-link {
+    margin-right: 0;
+  }
 }
-
