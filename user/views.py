@@ -40,7 +40,9 @@ def register(request):
                 messages.error(request, f'Error sending verification email: {e}')
     else:
         register_form = forms.RegistrationForm()
+
     return render(request, 'register.html', {'form': register_form, 'type': 'Register'})
+
 
 def activate(request, uid64, token):
     try:
@@ -61,13 +63,13 @@ def activate(request, uid64, token):
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
-        profile_form = forms.ChnageUserForm(request.POST, instance=request.user)
+        profile_form = forms.ChangeUserForm(request.POST, instance=request.user)
         if profile_form.is_valid():
             profile_form.save()
             messages.success(request, 'Profile updated successfully')
             return redirect('profile')
     else:
-        profile_form = forms.ChnageUserForm(instance=request.user)
+        profile_form = forms.ChangeUserForm(instance=request.user)
     return render(request, 'update_profile.html', {'form': profile_form})
 
 def user_login(request):
