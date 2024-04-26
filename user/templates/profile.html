@@ -1,42 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
-   {% if orders %}
-    <h3 class="text-center">Your Cart:</h3>
-    <h3 class="text-center">Total Cost: {{total_cost}}</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Order Date</th>
-          <th scope="col">price</th>
-          <th scope="col">Food Items</th>
-          <th scope="col">Order</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for order in orders %}
+<main style="margin-top: 80px;"> <!-- Add margin top to create space below the navbar -->
+  <div class="container">
+    <h1 class="mb-4 text-center">Profile Page</h1>
+    <!-- User Details Box -->
+    <div class="card mb-4 profile-card mx-auto" style="max-width: 1200px; background-color: #343A40; color: white;"> <!-- Set max-width to make the profile box smaller -->
+      <div class="card-body">
+        <h5 class="card-title">Username: {{ user_details.username }}</h5>
+        <p class="card-text">Full Name: {{ user_details.first_name }} {{ user_details.last_name }}</p>
+        <p class="card-text text-white">Email: {{ user_details.email }}</p>
+        <a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="text-center mb-4">Your Cart</h1> <!-- Heading positioned below the navbar -->
+  <div class="container">
+    {% if orders %}
+      <h3 class="text-center">Total Cost: {{ total_cost }}</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">Food Items</th>
+            <th scope="col">Order</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
           <tr>
             <th scope="row">{{ forloop.counter }}</th>
             <td>{{ order.date }}</td>
             <td>{{ order.total_cost }}</td>
-            <td>{{order.food_items}}</td>
+            <td>{{ order.food_items }}</td>
             <td>
-              <a class="btn btn-warning" href="{% url 'order' order.id%}">Order</a>
+              <a class="btn btn-warning" href="{% url 'order' order.id %}">Order</a>
             </td>
             <td>
-              <a class="btn btn-danger" href="{%url 'remove_from_cart' order.id%}">Remove Item</a>
+              <a class="btn btn-danger" href="{% url 'remove_from_cart' order.id %}">Remove Item</a>
             </td>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    <h3 class="text-center">No Items in the cart right now</h3>
-  {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <h3 class="text-center">No Items in the cart right now</h3>
+    {% endif %}
+  </div>
 </main>
 {% endblock %}
-  
- 

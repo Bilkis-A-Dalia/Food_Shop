@@ -15,6 +15,9 @@ from menu. models import FoodMenu
 from django.db.models import Sum
 from discount.models import Discount
 from decimal import Decimal
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 # from django.utils.text import force_text
 from . import forms
 
@@ -95,10 +98,11 @@ def user_logout(request):
 
 @login_required
 def profile(request):
+    user_details = User.objects.get(pk=request.user.pk)
     user = request.user
     orders = Order.objects.filter(user=user)
     total_cost = orders.aggregate(Sum('total_cost'))['total_cost__sum']
-    return render(request, 'profile.html', {'orders': orders, 'total_cost': total_cost})
+    return render(request, 'profile.html', {'user_details': user_details,'orders': orders, 'total_cost': total_cost})
 
 
 @login_required
@@ -147,3 +151,28 @@ def orderhistory(request):
     orderhistory = OrderHistry.objects.filter(user=user)
     total_cost = orderhistory.aggregate(Sum('total_cost'))['total_cost__sum']
     return render(request, 'order_history.html', {'orderhistory': orderhistory,'total_cost': total_cost})
+
+
+# reservation 
+@require_POST
+def reservation(request):
+    # Get form data
+    name = request.POST.get('name')
+    date = request.POST.get('date')
+    request_details = request.POST.get('request')
+    email = request.POST.get('email')
+    no_of_people = request.POST.get('people')
+
+    # Compose email message
+    subject = f"Reservation Request from {name}"
+    message_body = f"Name: {name}\nDate & Time: {date}\nSpecial Request: {request_details}\nEmail: {email}\nNo Of People: {no_of_people}"
+    sender_email = email  # Using the email provided in the reservation form as the sender's email address
+    recipient_email = ['bilkisadalia@gmail.com']  # Recipient's email address
+
+    try:
+        send_mail(subject, message_body, sender_email, recipient_email)
+        # Email sent successfully
+        return JsonResponse({'success': True})
+    except Exception as e:
+        # Error sending email
+        return JsonResponse({'success': False, 'error_message': str(e)})
