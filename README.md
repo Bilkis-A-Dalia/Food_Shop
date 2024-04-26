@@ -3,11 +3,11 @@
 Welcome to FlavorFusion Delights, an online food ordering platform inspired by popular services like Dominos. This project provides a seamless experience for both customers and admins, allowing users to explore the menu, place orders, and manage the system efficiently.
 
 ## Table of Contents
-1. [User Authentication](#user-authentication) 🔐
-2. [Menu Display and Ordering](#menu-display-and-ordering) 📋
-3. [Order History and Reviews](#order-history-and-reviews) 📝
-4. [Specials and Delivery Estimation](#specials-and-delivery-estimation) 🎉
-5. [Deployment and Submit](#deployment-and-submit) 🚀
+1. User Authentication 🔐
+2. Menu Display and Ordering 📋
+3. Order History and Reviews 📝
+4. Specials and Delivery Estimation 🎉
+5. Deployment and Submit 🚀
 
 ## User Authentication 🔐
 This section ensures a secure and straightforward user experience. Users can:
