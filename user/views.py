@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm, SetPasswordForm
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -176,3 +176,72 @@ def reservation(request):
     except Exception as e:
         # Error sending email
         return JsonResponse({'success': False, 'error_message': str(e)})
+    
+
+# passchange 
+def pass_change(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Password Updated Successfully')
+            update_session_auth_hash(request, form.user)
+            return redirect('profile')
+    
+    else:
+        form = PasswordChangeForm(user=request.user)
+    return render(request, 'pass_change.html', {'form' : form})
+
+
+# forget_password 
+def reset_pass(request):
+    if request.method == 'POST':
+        form = forms.PasswordResetForm(request.POST)
+        if form.is_valid():
+            # Get users by email
+            email = form.cleaned_data['email']
+            users = User.objects.filter(email=email)
+            if users.exists():
+                # Choose one user (for example, the first one)
+                user = users.first()
+
+                # Generate a password reset token
+                token = default_token_generator.make_token(user)
+                uid = urlsafe_base64_encode(force_bytes(user.pk))
+
+                # Build the password reset link
+                reset_link = f"http://127.0.0.1:8000/user/set_pass/{uid}/{token}"
+
+                # Send the password reset link to the user's email
+                email_subject = "Password Reset Request"
+                email_body = render_to_string('forget_pass_template.html', {'reset_link': reset_link})
+                email = EmailMultiAlternatives(email_subject, '', to=[email])
+                email.attach_alternative(email_body, 'text/html')
+                email.send()
+
+                messages.success(request, 'Password reset link has been sent to your email.')
+                return redirect('user_login')
+            else:
+                messages.error(request, 'Email does not exist.')
+    else:
+        form = forms.PasswordResetForm()
+    return render(request, 'email_for_pass.html', {'form': form})
+
+def set_pass(request,uid64,token):
+    try:
+        uid=urlsafe_base64_decode(uid64).decode()
+        user=User._default_manager.get(pk=uid)
+    except(User.DoesNotExist):
+        user=None
+    if user is not None and default_token_generator.check_token(user, token):
+        if request.method == 'POST':
+            form=SetPasswordForm(user=user,data=request.POST)
+            if form.is_valid():
+                form.save()
+                update_session_auth_hash(request,form.user)
+                return redirect('user_login')
+        else:
+            form=SetPasswordForm(user=user)
+        return render(request, 'forget_pass.html', {'form':form})
+    else:
+        return redirect('user_login')

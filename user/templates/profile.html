@@ -11,6 +11,7 @@
         <p class="card-text">Full Name: {{ user_details.first_name }} {{ user_details.last_name }}</p>
         <p class="card-text text-white">Email: {{ user_details.email }}</p>
         <a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a>
+        <a href="{% url 'pass_change'%}" class="btn btn-warning btn-sm">Change your password</a>
       </div>
     </div>
   </div>

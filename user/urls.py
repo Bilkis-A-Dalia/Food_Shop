@@ -16,5 +16,8 @@ urlpatterns = [
     path('order/<int:id>/', views.order, name='order'),
     path('orderhistory/',views.orderhistory,name='orderhistory'),
     path('reservation/',views.reservation,name='reservation'),
+    path('pass_change/',views.pass_change,name='pass_change'), 
+    path('reset_pass/',views.reset_pass,name='reset_pass'),
+    path('set_pass/<uid64>/<token>',views.set_pass,name='set_pass'),
 ]
 

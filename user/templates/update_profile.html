@@ -2,15 +2,13 @@
 {% load crispy_forms_tags %} 
 
 {% block content %}
-<main style="margin-top: 80px;"> 
+<main style="margin-top: 100px;"> 
 <div class="container mt-5"> <!-- Add margin on top -->
-    <form style="width: 50%; margin: auto;" method="post">
+    <form class="w-50 mx-auto" method="post"> <!-- Set width to 50% and center the form -->
         <h1 class="text-center mb-4">Update your Profile</h1> <!-- Center the title -->
-        {% comment %} <a href="{% url 'pass_change'%}" class="btn btn-warning btn-sm">Change your password</a> {% endcomment %}
         {% csrf_token %}
         {{ form|crispy }}
-
-        <button type="submit" class="btn btn-warning mb-5">Submit</button>
+        <button type="submit" class="btn btn-warning d-block mx-auto mb-5">Submit</button> <!-- Center the button -->
     </form> 
 </div>
 <main>

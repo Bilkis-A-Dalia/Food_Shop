@@ -4,28 +4,30 @@
 {% load static %}
 
 {% block content %}
-<div class='container d-flex' style='margin-top:100px;'>
-    <div class="col-md-6">
-        <img class="img-fluid" src="{% static 'login.jpg' %}" alt="">
-    </div>
-
-    <div class="form-card col-md-6" style=" padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 50%; margin: auto;">
-        <form method="post" style="color: black; font-weight: bold;">
-            <h1 style="text-align: center; margin-bottom: 30px; font-weight: bold; color: black;"> Login Page</h1>
-        
-            {% csrf_token %}
-        
-            {% if form.error %}
-                <div class="alert alert-danger" role="alert">
-                    {{ errors }}
-                </div>
-            {% endif %}
-        
-            {{ form|crispy }}
-        
-            <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">Login</button>
-            <a href="{% url 'register'%}">Don't have an account? Register</a>
-        </form>
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-lg-6">
+            <img class="img-fluid" src="{% static 'login.jpg' %}" alt="">
+        </div>
+        <div class="form-card col-lg-6" style="padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%;">
+            <form method="post" style="color: black; font-weight: bold;">
+                <h1 style="text-align: center; margin-bottom: 30px; font-weight: bold; color: black;"> Login Page</h1>
+            
+                {% csrf_token %}
+            
+                {% if form.error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ errors }}
+                    </div>
+                {% endif %}
+            
+                {{ form|crispy }}
+            
+                <button type="submit" class="btn btn-warning mb-4" style="width: 100%; background-color: #ffc107; border-color: #ffc107; font-weight: bold;">Login</button>
+                <a href="{% url 'register'%}" class="d-block mb-2">Don't have an account? Register</a>
+                <a href="{% url 'reset_pass'%}" class="d-block">Forget your password?</a>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
